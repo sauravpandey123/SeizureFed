@@ -18,7 +18,7 @@ conda activate pedsleep_env
 
 
 # :computer: User Guide 
-## :inbox_tray:  0. 📥 Downloading the Datasets
+## :inbox_tray:  0. Downloading the Datasets
 
 We use the following publicly available EEG datasets in this project:
 
