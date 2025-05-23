@@ -29,3 +29,4 @@ We use the following publicly available EEG datasets in this project:
 
 Each dataset can be downloaded using the respective links above. Please review and comply with the data usage licenses provided by the original sources.
 
+For NCH Sleep Databank, only a small subset of patients experienced seizures. You may only download the `.edf `, '.annot`, and `.tsv ` files for these patients, listed here.
