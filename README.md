@@ -19,3 +19,8 @@ conda activate pedsleep_env
 
 # :computer: User Guide 
 ## :inbox_tray:  0. Downloading the Datasets
+We work with the following datasets that are available to download below:
+[Siena Scalp EEG]([url](https://physionet.org/content/siena-scalp-eeg/1.0.0/))
+[CHB-MIT ]([url](https://physionet.org/content/chbmit/1.0.0/))
+[Helsinki University Hospital ]([url](https://zenodo.org/records/2547147))
+[NCH Sleep Databank]([url](https://physionet.org/content/nch-sleep/3.1.0/))
