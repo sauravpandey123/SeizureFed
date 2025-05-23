@@ -1,7 +1,7 @@
 ## 📄 Required Patient Identifiers – NCH Sleep Databank
 
 Only the following patient identifiers experienced seizures.  
-Download the `.edf`, `.annot`, and `.tsv` files for these patients:
+Download the following `.edf`, `.annot`, and `.tsv` files inside the `sleep_data` directory. 
 
 - 11362_10972  
 - 12637_8776  
