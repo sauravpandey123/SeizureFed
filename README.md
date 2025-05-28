@@ -16,6 +16,9 @@ conda env create -f environment.yml
 conda activate pedsleep_env
 ```
 
+⚠️ Important: All scripts in this project require command-line arguments.
+Use the `--help` flag with any script to view its required inputs and options.
+
 
 # :computer: User Guide 
 ## :inbox_tray:  0. Downloading the Datasets
