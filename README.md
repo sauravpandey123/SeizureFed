@@ -32,15 +32,19 @@ Each dataset can be downloaded using the respective links above. Please review a
 **For the NCH Sleep Databank, only a small subset of patients experienced seizures.**  
 You should download only the `.edf`, `.annot`, and `.tsv` files corresponding to these patients, as listed [here](NCH_Seizure_Patients.md).
 
-## :package:  1. Datasets Preprocessing
-Once the datasets have been downloaded, we aim to process them in a format suitable for training the models. To do this, we first create a `.h5` file corresponding to every `.edf` file. Then, for every dataset, we combine the `.h5` files for the individual patients into one patientwise `.h5` file, which stores each patient's signals and seizure labels under a key. This allows us to have all the data in one place for each dataset, allowing for easy access during training. 
-Once the final patientwise `.h5` files are created, the individual `.h5` files for each patients can be deleted if storage is a concern. 
+## 📦 1. Datasets Preprocessing
 
-Since every dataset has a unique structure, we provide a separate preprocessing file for each dataset, which can be run in the following way:
+Once the datasets have been downloaded, we process them into a format suitable for model training. First, we create a `.h5` file for every `.edf` file. Then, for each dataset, we merge these individual `.h5` files into a **single patientwise `.h5` file**, where each patient's signals and seizure labels are stored under a unique key.
 
-```
+This consolidated format enables efficient access to all patient data within a dataset during training.
+
+> **Note:** Once the final patientwise `.h5` files are created, the individual `.h5` files can be deleted to save storage space.
+
+Because each dataset has a unique structure, we provide a dedicated preprocessing script for each one. These can be run using the following commands:
+
+```bash
 python3 preprocessing/preprocess_chb.py
 python3 preprocessing/preprocess_helsinki.py
 python3 preprocessing/preprocess_nch.py
 python3 preprocessing/preprocess_siena.py
-```
+
