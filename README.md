@@ -45,7 +45,7 @@ This consolidated format enables efficient access to all patient data within a d
 
 > **Note:** Once the final patientwise `.h5` files are created, the individual `.h5` files can be deleted to save storage space.
 
-Since every dataset has a unique structure, we provide a separate preprocessing script for each one. These scripts require command-line arguments such as input and output directories. You can view all available options using the `--help` flag.
+Since every dataset has a unique structure, we provide a separate preprocessing script for each one below
 
 ```bash
 python3 preprocessing/preprocess_chb.py
