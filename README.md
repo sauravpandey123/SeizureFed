@@ -52,4 +52,25 @@ python3 preprocessing/preprocess_chb.py
 python3 preprocessing/preprocess_helsinki.py
 python3 preprocessing/preprocess_nch.py
 python3 preprocessing/preprocess_siena.py
+```
+## 🧪 Non-Federated Setup
 
+Before introducing privacy-preserving federated learning, we establish two critical baselines: **Local Training** (per-site models) and **Centralized Training** (merged data). These help us evaluate how well the model performs without federated constraints.
+
+### Local Training (Per-Site Models)
+
+We train one model **independently on each dataset** (CHB, Helsinki, NCH, or Siena), simulating settings where institutions do not share data. To train and then later evaluate each model on the other datasets to test generalization, run the following:
+
+```bash
+python3 non_fed_training/train_local.py
+python3 non_fed_training/evaluate_local.py
+```
+
+### Centralized Training (Collaborative Model)
+
+In this setting, we combine patient data from all four datasets and train a single model. This provides an upper-bound baseline where all data is pooled without privacy restrictions. To train this centralized model and evaluate it on each dataset, run the following:
+
+```bash
+python3 non_fed_training/train_central.py
+python3 non_fed_training/evaluate_central.py
+```
