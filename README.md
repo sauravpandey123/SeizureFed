@@ -10,10 +10,10 @@ more robust and fair global model. This work highlights the potential of balance
 Please follow the following steps to create an environment for running PedSleepMAE
 
 ```
-git clone https://github.com/sauravpandey123/PedSleepMAE.git
-cd PedSleepMAE
+git clone https://github.com/sauravpandey123/SeizureFed.git
+cd SeizureFed
 conda env create -f environment.yml
-conda activate pedsleep_env
+conda activate seizure_fed
 ```
 
 > ⚠️ **Important:**  
