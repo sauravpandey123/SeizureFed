@@ -53,7 +53,7 @@ python3 preprocessing/preprocess_helsinki.py
 python3 preprocessing/preprocess_nch.py
 python3 preprocessing/preprocess_siena.py
 ```
-## 🧪 Non-Federated Setup
+## 🧪 2. Non-Federated Setup
 
 Before introducing privacy-preserving federated learning, we establish two critical baselines: **Local Training** (per-site models) and **Centralized Training** (merged data). These help us evaluate how well the model performs without federated constraints.
 
