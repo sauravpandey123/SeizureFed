@@ -13,7 +13,7 @@ Please follow the following steps to create an environment for running PedSleepM
 git clone https://github.com/sauravpandey123/SeizureFed.git
 cd SeizureFed
 conda env create -f environment.yml
-conda activate seizure_fed
+conda activate SeizureFed
 ```
 
 > ⚠️ **Important:**  
