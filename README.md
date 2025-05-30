@@ -114,10 +114,10 @@ python3 fed_training/main.py \
   --method rsa \
   --subset_size 10000 \
   --num_rounds 30 \
-  --lr 1e-3 \
+  --lr 4e-5 \
   --weight_decay 1e-5 \
-  --local_epochs 3 \
-  --channel_name "Fp2-F8" \
+  --local_epochs 1 \
+  --channel_name "F3-C3" \
   --model_prefix "fed_rsa" \
   --model_save_dir "./saved_models" \
   --seed 42
