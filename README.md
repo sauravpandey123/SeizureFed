@@ -74,3 +74,51 @@ In this setting, we combine patient data from all four datasets and train a sing
 python3 non_fed_training/train_central.py
 python3 non_fed_training/evaluate_central.py
 ```
+
+## 3. Federated Learning Setup
+
+To train a seizure prediction model collaboratively across hospitals while respecting data privacy, we implement a FL setup that simulates multiple clients and a central server. Each client represents a hospital with its own private EEG dataset, and the server coordinates training without accessing raw data.
+
+### ⚙️ Aggregation Strategies Supported
+
+We provide three FL aggregation strategies:
+
+- `fedavg_simple`: Standard Federated Averaging without weighting  
+- `fedavg_weighted`: Weighted Federated Averaging (clients contribute proportionally to their dataset sizes)  
+- `rsa`: **Random Subset Aggregation (RSA)**, where each client trains on a fixed-size subset per round to ensure balanced aggregation regardless of dataset size
+
+Additionally, we compute **global normalization statistics** (mean and std) in a privacy-preserving way to standardize EEG features across clients.
+
+---
+
+> ⚠️ **Important:**  
+> You **must** update the path to the `.h5` dataset files in the `Client` class before running federated training.  
+>  
+> Inside `client.py`, modify this line based on where your preprocessed `.h5` files are stored:
+> ```python
+> self.data_path = f'../DATA/{self.name.lower()}_patientwise.h5'  # <-- Update this path
+> ```
+> For example, if your files are in `./data/`, change it to:
+> ```python
+> self.data_path = f'./data/{self.name.lower()}_patientwise.h5'
+> ```
+
+---
+
+### 🧪 Training the Federated Model
+
+To run federated training with your desired settings:
+
+```bash
+python3 fed_training/main.py \
+  --method rsa \
+  --subset_size 10000 \
+  --num_rounds 30 \
+  --lr 1e-3 \
+  --weight_decay 1e-5 \
+  --local_epochs 3 \
+  --channel_name "Fp2-F8" \
+  --model_prefix "fed_rsa" \
+  --model_save_dir "./saved_models" \
+  --seed 42
+
